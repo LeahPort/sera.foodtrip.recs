@@ -1,120 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sera Community Food Trip Guide | The World's Best Restaurants</title>
-  <!-- Load Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Use Inter font family -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #1A1A1A;
-      color: #F4F4F4;
-    }
-    .text-sera-gold { color: #C5A358; }
-    .border-sera-gold { border-color: #C5A358; }
-    .bg-sera-gold { background-color: #C5A358; }
-    .section-header {
-      font-size: 2.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      padding-bottom: 0.5rem;
-      margin-top: 2.5rem;
-    }
-    .city-name {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: white;
-      border-left: 4px solid #C5A358;
-      padding-left: 0.75rem;
-    }
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #282828; }
-    ::-webkit-scrollbar-thumb { background: #444444; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #555555; }
-    .place-list li { padding-left: 0.25rem; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sera Community Food Trip Guide | The World's Best Restaurants</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Apply the brand font family and dark background */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1A1A1A; /* Primary Black from Brand Guidelines */
+            color: #F4F4F4; /* Secondary White/Cream */
+        }
+        /* Custom gold accent color for borders and highlights */
+        .text-sera-gold { color: #C5A358; } /* Accent Deep Gold/Brass */
+        .border-sera-gold { border-color: #C5A358; }
+        .bg-sera-gold { background-color: #C5A358; }
+
+        /* Custom scrollbar styling for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #282828;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444444;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555555;
+        }
+
+        .section-header {
+            font-size: 2.5rem; /* text-4xl */
+            font-weight: 800; /* font-extrabold */
+            line-height: 1.2;
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .city-name {
+            font-size: 1.6rem; /* slightly larger than text-xl */
+            font-weight: 600; /* font-semibold */
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            border-left: 4px solid #C5A358; /* Gold accent line */
+            padding-left: 0.75rem;
+        }
+        .place-list li {
+            padding-left: 0.25rem;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header & Navigation Bar -->
-  <header class="bg-black/90 sticky top-0 z-10 shadow-lg border-b border-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-      <!-- Logo -->
-      <a href="https://eatwithsera.com/" class="flex items-center space-x-2">
-        <img src="https://eatwithsera.com/members" alt="Sera Logo" class="h-8 w-auto">
-        <span class="text-xl font-bold text-white tracking-widest hidden sm:block">SERA</span>
-      </a>
-      <!-- Navigation/CTA - Linked to WhatsApp -->
-      <div class="flex items-center space-x-4">
-        <p class="hidden md:block text-sm text-gray-400 font-medium">Bringing People and Food Together.</p>
-        <a href="https://chat.whatsapp.com/FQb1uMa6sc7GED4zExzpOG" target="_blank"
-          class="px-4 py-2 bg-sera-gold text-black font-semibold text-sm rounded-lg hover:bg-yellow-600 transition duration-300 shadow-md">
-          Join the Community
-        </a>
-      </div>
-    </div>
-  </header>
-  <!-- Main Content Container -->
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <!-- Hero Section -->
-    <section class="text-center mb-16 border-b border-sera-gold pb-10">
-      <h1 class="text-6xl font-extrabold mb-4 tracking-tighter text-white sm:text-7xl">
-        Community-Recommended Food Trips
-      </h1>
-      <h2 class="text-2xl font-light text-gray-300 max-w-2xl mx-auto mb-6 sm:text-3xl">
-        A Sera Guide to Where to Eat Around the World
-      </h2>
-      <p class="text-lg text-gray-400 max-w-3xl mx-auto">
-        If you plan your holidays around what you’re going to eat, you’re in the right place. This guide is built entirely from the Sera community’s own travel recommendations – the places they queue for, dream about on the flight home, and insist their friends book now.
-      </p>
-    </section>
-    <!-- Guide Introduction -->
-    <section class="mb-12 p-6 bg-[#252525] rounded-xl shadow-2xl border border-gray-700">
-      <p class="text-lg mb-4 text-gray-200">
-        From tiny sandwich counters in Florence to yakitori bars in Tokyo and natural wine spots in Lisbon, this is a living, breathing list of real food lovers’ favourite restaurants, bakeries, bars and markets around the world.
-      </p>
-      <p class="text-md text-gray-400 italic">
-        Use it to plan your next food trip, bolt a great meal onto a work trip, or just daydream between bookings.
-      </p>
-      <div class="mt-6">
-        <h3 class="text-xl font-bold mb-3 text-sera-gold">How to Use This Guide</h3>
-        <ul class="list-disc ml-6 space-y-2 text-gray-300">
-          <li>Pick your country or city and scan for the names that keep popping up in our community chats.</li>
-          <li>Expect a mix of high-end tasting menus, local institutions, street food, wine bars, bakeries and coffee spots.</li>
-          <li>Everything here is community-recommended – nothing sponsored, no PR briefs, just places our people genuinely loved.</li>
-        </ul>
-      </div>
-    </section>
-    <!-- LATIN AMERICA -->
-    ... <!-- Everything else from the previous full HTML file goes here -->
-    <!-- For space, see previous responses for complete content sections -->
-    <!-- Final CTA Section (Add Your Own) -->
-    <section class="text-center p-8 bg-[#252525] rounded-xl shadow-2xl border border-sera-gold">
-      <h2 class="text-3xl font-bold mb-4 text-white">Add Your Own Food Trip Favourites</h2>
-      <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-6">
-        Sera is built on the idea that the best food tips come from people who truly love to eat. If you’ve eaten somewhere unforgettable—the kind of place you need other people to know about—we want to hear about it.
-      </p>
-      <a href="https://chat.whatsapp.com/FQb1uMa6sc7GED4zExzpOG" target="_blank"
-          class="inline-block px-8 py-3 bg-sera-gold text-black text-xl font-bold rounded-xl shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:scale-105">
-        Share Your Favourite Spots
-      </a>
-    </section>
-  </main>
-  <!-- Footer -->
-  <footer class="bg-black/90 mt-16 border-t border-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500">
-      <p>© 2025 Sera • Gourmeta Ltd. | Bringing People and Food Together.</p>
-      <p class="mt-2 space-x-4">
-        <a href="https://eatwithsera.com/faqs" target="_blank" class="hover:text-sera-gold transition duration-200">FAQs</a>
-        <a href="https://eatwithsera.com/contact" target="_blank" class="hover:text-sera-gold transition duration-200">Contact Us</a>
-        <a href="https://eatwithsera.com/legal" target="_blank" class="hover:text-sera-gold transition duration-200">Legal</a>
-      </p>
-    </div>
-  </footer>
+
+    <!-- Header & Navigation Bar -->
+    <header class="bg-black/90 sticky top-0 z-10 shadow-lg border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo - UPDATED ADDRESS -->
+            <a href="https://eatwithsera.com/" class="flex items-center space-x-2">
+                <img src="https://media.licdn.com/dms/image/v2/D4E0BAQE6_F0gzm8eyg/company-logo_200_200/company-logo_200_200/0/1694622146731?e=1765411200&v=beta&t=0qukjKDwdVQiyEc3vMH2aVMpDNKjkxkQTIsfFZT2Eqo" alt="Sera Logo" class="h-8 w-auto">
+                <span class="text-xl font-bold text-white tracking-widest hidden sm:block">SERA</span>
+            </a>
+
+            <!-- Navigation/CTA - Linked to WhatsApp -->
+            <div class="flex items-center space-x-4">
+                <p class="hidden md:block text-sm text-gray-400 font-medium">
+                    Bringing People and Food Together.
+                </p>
+                <!-- UPDATED LINK -->
+                <a href="https://chat.whatsapp.com/FQb1uMa6sc7GED4zExzpOG" target="_blank" class="px-4 py-2 bg-sera-gold text-black font-semibold text-sm rounded-lg hover:bg-yellow-600 transition duration-300 shadow-md">
+                    Join the Community
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Hero Section -->
+        <section class="text-center mb-16 border-b border-sera-gold pb-10">
+            <h1 class="text-6xl font-extrabold mb-4 tracking-tighter text-white sm:text-7xl">
+                Community-Recommended Food Trips
+            </h1>
+            <h2 class="text-2xl font-light text-gray-300 max-w-2xl mx-auto mb-6 sm:text-3xl">
+                A Sera Guide to Where to Eat Around the World
+            </h2>
+            <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                If you plan your holidays around what you’re going to eat, you’re in the right place. This guide is built entirely from the Sera community’s own travel recommendations – the places they queue for, dream about on the flight home, and insist their friends book now.
+            </p>
+        </section>
+
+        <!-- Guide Introduction -->
+        <section class="mb-12 p-6 bg-[#252525] rounded-xl shadow-2xl border border-gray-700">
+            <p class="text-lg mb-4 text-gray-200">
+                From tiny sandwich counters in Florence to yakitori bars in Tokyo and natural wine spots in Lisbon, this is a living, breathing list of real food lovers’ favourite restaurants, bakeries, bars and markets around the world.
+            </p>
+            <p class="text-md text-gray-400 italic">
+                Use it to plan your next food trip, bolt a great meal onto a work trip, or just daydream between bookings.
+            </p>
+            <div class="mt-6">
+                <h3 class="text-xl font-bold mb-3 text-sera-gold">How to Use This Guide</h3>
+                <ul class="list-disc ml-6 space-y-2 text-gray-300">
+                    <li>Pick your country or city and scan for the names that keep popping up in our community chats.</li>
+                    <li>Expect a mix of high-end tasting menus, local institutions, street food, wine bars, bakeries and coffee spots.</li>
+                    <li>Everything here is community-recommended – nothing sponsored, no PR briefs, just places our people genuinely loved.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Content Sections -->
+
+        <!-- Latin America -->
+        <section class="mb-16">
+            <h2 class="section-header text-sera-gold">Latin America: Big Flavours, Big Memories</h2>
+
+            <!-- Argentina -->
+            <h3 class="city-name">Argentina – Buenos Aires & Mendoza</h3>
+            <p class="text-gray-400 mb-4">Buenos Aires is a dream for anyone who loves beef, wine and late nights.</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li><b>Lo de Jesús</b> – Classic parrilla with perfectly grilled meat and a serious wine list.</li>
+                <li><b>Anchoita & Anchoita Cava</b> – Frequently called some of the best spots in the city; one for people who love good food and good wine.</li>
+                <li><b>Gran Dabbang</b> – Fusion plates mixing Indian, Southeast Asian and Argentine flavours.</li>
+                <li><b>El Preferido de Palermo, Parrilla Peña, Los Galgos and Proper</b> – for old-school steakhouse vibes, tapas, bistro dishes and small plates in a converted garage.</li>
+                <li>In Mendoza and the Maipú wine region, our community rave about <b>Casa Vigil</b> and <b>Azafrán</b> for long lunches, wine and that “we might never go home” feeling.</li>
+            </ul>
+
+            <!-- Chile -->
+            <h3 class="city-name">Chile – Santiago & Atacama</h3>
+            <p class="text-gray-400 mb-4">In Santiago, the big-hitters keep coming up:</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li><b>Boragó</b> – A destination tasting menu, rooted in Chilean ingredients.</li>
+                <li><b>De Raiz and Prima Bar</b> – From the chef behind the now-legendary 99 Restaurante.</li>
+                <li><b>Bocanariz</b> – A wine bar everyone seems to fall in love with.</li>
+                <li><b>Emporio Andino</b> – Excellent and must-try empanadas.</li>
+                <li>In San Pedro de Atacama, expectations are lower food-wise (and prices higher) but community mentions include <b>Delicias del Carmen, La Picada del Indio</b> and <b>La Franchuteria</b> – with the top tip being to stay just outside the main town for easier access to activities.</li>
+            </ul>
+
+            <!-- Colombia -->
+            <h3 class="city-name">Colombia – Medellín, Bogotá & Cartagena</h3>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>Medellín: <b>Alberto Lechon, Doña Lechona</b> and <b>Sulechona</b> – all about lechona: pork and rice that our members call “incredible” and “unmissable”.</li>
+                <li>Bogotá: <b>Usaquén flea market</b> – Sunday market with excellent artisans, live music and plenty of street food. Also <b>La Rosconería</b> for roscones at breakfast, <b>Libertario</b> and <b>Azahar Café 93</b> for some of the best coffee in the city, plus <b>Philippe</b> for pastries.</li>
+                <li>Cartagena: <b>Celele</b> (total must-visit), <b>Carmen</b> and <b>Mar y Zielo</b> for modern Caribbean cooking, plus <b>Los Fritos de Dora</b> and <b>La Cevichería</b> for street food and ceviche.</li>
+            </ul>
+
+            <!-- Mexico -->
+            <h3 class="city-name">Mexico – CDMX, Oaxaca & Tulum</h3>
+            <p class="text-gray-400 mb-4">Mexico City (CDMX) is one of the most-mentioned cities in our entire list.</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>CDMX: <b>Contramar</b> (Tuna tostadas and whole fish are non-negotiable), <b>Campobaja</b> (seafood and oysters with uni). <b>Panadería Rosetta and Rosetta</b> (world-famous bakery and restaurant). Other favorites include <b>Máximo Bistrot, Expendio de Maíz, Hugo el Wine Bar, Taquería Orinoco, Licorería Limantour</b> and <b>Ticuchi</b>.</li>
+                <li>Oaxaca: Expect <b>Alfonsina, Criollo, Casa Oaxaca</b> and <b>El Destilado</b> for memorable meals, plus mezcal bars like <b>In Situ, La Mezcaloteca</b> and <b>Selva</b>.</li>
+                <li>Tulum: <b>Taqueria Honorio</b> (“best tacos in Tulum”), <b>El Rincón Chiapanecos, Taqueria La Chiapaneca, Cervecería Tulum</b> and <b>Chambao</b> also getting regular love.</li>
+            </ul>
+        </section>
+
+        <!-- Europe -->
+        <section class="mb-16">
+            <h2 class="section-header text-sera-gold">Europe: Bakeries, Wine Bars & Long Lunches</h2>
+
+            <!-- France -->
+            <h3 class="city-name">France – Paris, Nice, Cannes & Toulouse</h3>
+            <p class="text-gray-400 mb-4">Paris in our community looks like pastry runs and long lunches:</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>Paris Pastry: <b>Cédric Grolet, The French Bastards, Utopie, Tapisserie</b> and <b>Mamiche</b>.</li>
+                <li>Paris Lunch: <b>Clamato, L’ami Jean, Le Comptoir de la Gastronomie</b> and <b>Grande Brasserie</b>.</li>
+                <li>Paris Evenings: <b>Folderol, Bambino, Clown Bar, Candelaria</b> and <b>Little Red Door</b>.</li>
+                <li>On the Riviera: Nice favourites include <b>Peixes</b> and <b>La Merenda</b>, while in Cannes <b>Astoux et Brun</b> and <b>Hotel Martinez</b> are the classic stops.</li>
+                <li>Toulouse: <b>Victor Hugo Market</b> for oysters, cassoulet at <b>Emile</b> or <b>Le Genty Magre</b>, coffee at <b>Hayuco</b> or <b>Cerise</b>.</li>
+            </ul>
+
+            <!-- Italy -->
+            <h3 class="city-name">Italy – Florence, Rome, Turin, Venice & Tuscany</h3>
+            <p class="text-gray-400 mb-4">Pasta, Bistecca, and Roman classics:</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>Florence: <b>I' Girone De' Ghiotti</b> (best sandwich), <b>All’Antico Vinaio</b>, plus <b>Buca Mario, Santo Bevitore, 13 Gobbi</b> and <b>4 Leoni</b> for bistecca and trattoria classics. <b>La Ménagère</b> is the go-to for breakfast.</li>
+                <li>Rome: <b>Felice a Testaccio, Al Moro, Taverna Trilussa, Roscioli</b> and <b>Pane e Salame</b> all get repeated mentions for pasta, carbonara and long Roman lunches, while <b>Mirabelle</b> is the romantic rooftop choice.</li>
+                <li>Turin & Tuscany: <b>Consorzio</b> in Turin and <b>Trattoria Pane e Vino</b> in Verona are community favourites. <b>Il Lecchio</b> (near Montalcino) and tastings at the <b>Antinori estate</b> in Tuscany.</li>
+                <li>Venice: <b>Venissa</b> appears as the key destination recommendation.</li>
+            </ul>
+
+            <!-- Spain -->
+            <h3 class="city-name">Spain – Barcelona, Madrid, San Sebastián & Málaga</h3>
+            <p class="text-gray-400 mb-4">Tapas, pintxos, and modern Spanish plates:</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>Barcelona: <b>Disfrutar/Compartir, Canete, Mano Rota, Martinez, Morro Fi, Bar Brutal, La Plata, El Xampanyet</b> and <b>La Cova Fumada</b>.</li>
+                <li>Madrid: <b>Mercado de San Miguel</b> (grazing), <b>Triciclo, Alabaster</b> and <b>Vinoteca Moratín</b> for modern and classic Spanish menus, and <b>Bodega de los Secretos</b> for the dining experience.</li>
+                <li>San Sebastián: <b>Borda Berri, La Cuchara de San Telmo, Bar Nestor, Casa Urola</b> and <b>La Viña</b> (Basque cheesecake).</li>
+                <li>Málaga & the Balearics: In Málaga, <b>La Cosmopolita, Kaleja, Casa Lola, Uvedoble, La Tranca</b> and <b>El Pimpi</b> headline the tapas crawl. In Palma and Menorca, spots like <b>El Camino, Terrae, Koa, Ses Coves, Sumaq, Sa Llagosta</b> and <b>Trebol Menorca</b>.</li>
+            </ul>
+
+            <!-- Portugal -->
+            <h3 class="city-name">Portugal – Lisbon & Porto</h3>
+            <p class="text-gray-400 mb-4">Lisbon is a huge community favourite for food trips.</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>Lisbon: Expect <b>O Velho Eurico, Bifanas do Sr. Alonso, Taberna Sal Grosso, Vida de Tasca, Nunes Real Marisqueira, Fogo, SEM</b> and <b>Pigmeu</b>, plus <b>Rio de Mel</b> for serious piri piri chicken.</li>
+                <li>Porto: Favourites include <b>Chama, Cozinha das Flores, Euskalduna, Apego, Almeja, O Afonso, Pedro dos Frangos</b> and seaside stops like <b>Restaurante Veleiros</b> for roasted octopus.</li>
+            </ul>
+
+            <!-- Scandinavia -->
+            <h3 class="city-name">Scandinavia – Copenhagen, Stockholm, Oslo, Helsinki</h3>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>Copenhagen: Bakeries like <b>Juno the Bakery, Meyers Bageri, Hart Bageri</b> and <b>Landbageriet</b>. Big-name restaurants such as <b>Bæst, Kødbyens Fiskebar, Høst, Kadeau, Jordnær, Geranium</b> and <b>Noma</b>.</li>
+                <li>Stockholm: <b>Brasserie Astoria</b> is a big favourite, while <b>Tranan’s</b> latkes, fried herring and off-menu meatballs get rave reviews.</li>
+                <li>Oslo: <b>Kontrast</b> is described as exceptional, with <b>Himkok, Mathallen, Fiskeriet, Tim Wendelboe</b> and <b>Talormade</b> making Oslo a great coffee + seafood + cocktails city.</li>
+                <li>Helsinki: <b>Way Bakery</b> (bakery by day, wine bar with plates by night), <b>Albina, Yes Yes Yes, Seahorse</b> and <b>Harju 8</b> paint a picture of a small but very considered food scene.</li>
+            </ul>
+        </section>
+
+        <!-- Asia -->
+        <section class="mb-16">
+            <h2 class="section-header text-sera-gold">Asia: From Yakitori to Hawker Centres</h2>
+
+            <!-- Japan -->
+            <h3 class="city-name">Japan – Tokyo & Kyoto</h3>
+            <p class="text-gray-400 mb-4">Serious sushi and characterful ramen spots:</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>Tokyo: <b>Afuri</b> for yuzu ramen, <b>Ginza Katsukami</b> and <b>Hakkoku</b> for serious tonkatsu and sushi, <b>Ukiyo</b> for refined, spice-led cooking and coffee stops like <b>Torahebi</b> and <b>Mameya Kakeru</b>.</li>
+                <li>Kyoto: <b>Okariba, Wajoryomen Sugari, Hitomi, Hikiniku to Come, Gion Duck Noodles</b> and <b>Vegan Ramen Uzu</b> show a preference for small, characterful spots.</li>
+            </ul>
+
+            <!-- Hong Kong, Singapore, South Korea, Vietnam -->
+            <h3 class="city-name">Hong Kong, Singapore, South Korea & Vietnam</h3>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>Hong Kong: Think <b>Yardbird</b> for yakitori and vibes, <b>Mak’s Noodle, Kau Kee</b> and <b>Kam’s Roast Goose</b> for old-school bowls. Big-name dim sum and Cantonese restaurants like <b>The Chairman, Lung King Heen, Tin Lung Heen</b> and <b>Mott 32</b>.</li>
+                <li>Singapore: Our community says to spend as much time as you can at <b>hawker centres</b>, with <b>Odette, Burnt Ends, Candlenut, JAAN, Tippling Club</b> and <b>Imperial Treasure</b> as the higher-end options.</li>
+                <li>South Korea (Seoul): Expect late-night fried chicken at <b>Hanchu</b>, tasting menus at <b>Mingles</b> and <b>Jueun</b>, BBQ at <b>Nari’s House</b>, street food at <b>Gwangjang Market</b> and cocktails at <b>Charles H, OUL</b> and <b>Namsan Sool Club</b>.</li>
+                <li>Vietnam (Saigon & Hoi An): In Ho Chi Minh City, <b>Saigon Street Eats</b> seafood tours, <b>Pho Phuong</b> and <b>Pizza 4P’s</b> all get nods.</li>
+            </ul>
+        </section>
+
+        <!-- Africa & the Middle East -->
+        <section class="mb-16">
+            <h2 class="section-header text-sera-gold">Africa & the Middle East: Markets, Tagines & Wine Country</h2>
+
+            <!-- Morocco -->
+            <h3 class="city-name">Morocco – Marrakech</h3>
+            <p class="text-gray-400 mb-4">Rooftop tagines, hidden courtyards and cocktails:</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li><b>La Famille, +61, Dar Yacout, Sahbi Sahbi, Nomad, Cafe Atay</b> and <b>Chez Lamine</b> all get mentioned, along with <b>Comptoir Darna</b> for a bougie lamb-sharing dinner with belly dancing and <b>El Fenn</b> and <b>Baromètre</b> for drinks.</li>
+            </ul>
+
+            <!-- South Africa -->
+            <h3 class="city-name">South Africa – Cape Town & Stellenbosch</h3>
+            <p class="text-gray-400 mb-4">From farm markets to fine dining with serious views:</p>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>Cape Town: <b>Oranjezicht City Farm</b> and <b>Neighbourgoods Market</b>, restaurants like <b>Fyn, La Colombe, Belly of the Beast, Ouzeri, Emazulwini</b> and <b>The Pot Luck Club</b>.</li>
+                <li>Stellenbosch: <b>Delaire Graff, Tokara, Rust en Vrede, Dusk, Overture</b> and <b>Eike</b> all appear as memorable meals with serious views and wine.</li>
+            </ul>
+        </section>
+
+        <!-- North America -->
+        <section class="mb-16">
+            <h2 class="section-header text-sera-gold">North America: From NY Slices to LA Tacos</h2>
+
+            <!-- United States Highlights -->
+            <h3 class="city-name">United States Highlights</h3>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>New York City & Brooklyn: The list runs from <b>Katz’s Deli, Russ & Daughters, Joe’s Shanghai</b> and <b>Prince Street Pizza</b> to <b>Lucali, Oxomoco, Peter Luger</b> and <b>Maison Premiere</b>.</li>
+                <li>Los Angeles: Community favourites include <b>Courage Bagels, Teddy’s Red Tacos, Bestia, Bavel, République, Sqirl, Gjelina, Jitlada, Soowon Galbi, Parks BBQ, Guelaguetza, Grand Central Market</b> and <b>Smorgasburg LA</b>, plus an extensive roster of sushi and kaiseki spots such as <b>Sushi Zo</b> and <b>n/naka</b>.</li>
+                <li>San Francisco: Recommendations include <b>Zuni Café</b> (always order the roast chicken and bread salad), <b>House of Prime Rib, Harris’ Steakhouse</b> and <b>Mister Jiu’s</b>.</li>
+                <li>Miami: Mixes Cuban institutions like <b>Versailles, El Sanguich, Cafe La Trova</b> and <b>Tinta y Cafe</b> with sushi at <b>Uchi</b> and <b>Hiyakawa</b>.</li>
+            </ul>
+        </section>
+
+        <!-- UK & Ireland -->
+        <section class="mb-16">
+            <h2 class="section-header text-sera-gold">The UK & Ireland: Weekenders Worth Booking</h2>
+
+            <!-- UK & Ireland Highlights -->
+            <h3 class="city-name">UK & Ireland Highlights</h3>
+            <ul class="list-disc ml-6 space-y-2 text-gray-300 place-list">
+                <li>UK Favourites: Range from <b>Wheelers</b> and <b>Whitstable Oyster Company</b> in Whitstable to <b>Roots</b> and <b>The Star Inn</b> in Yorkshire. Country pubs like <b>The Bull, The Swan, The Lamb Inn</b> and <b>The Bell</b> in the Cotswolds. Manchester spots such as <b>Psycho Sandbar, El Gato Negro, Kala, Mackie Mayor</b> and deep dish at <b>Ramonas</b>.</li>
+                <li>Ireland: <b>Paradiso</b> in Cork (seasonal vegetarian food), <b>Elbow Lane</b> and <b>Market Lane</b> for smokehouse and modern Irish plates, and West-coast stops like <b>The Misunderstood Heron hut</b> and <b>An Port Mór</b> for views with your seafood.</li>
+            </ul>
+        </section>
+
+
+        <!-- Final CTA Section (Add Your Own) -->
+        <section class="text-center p-8 bg-[#252525] rounded-xl shadow-2xl border border-sera-gold">
+            <h2 class="text-3xl font-bold mb-4 text-white">Add Your Own Food Trip Favourites</h2>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-6">
+                Sera is built on the idea that the best food tips come from people who truly love to eat. If you’ve eaten somewhere unforgettable—the kind of place you need other people to know about—we want to hear about it.
+            </p>
+            <!-- UPDATED LINK -->
+            <a href="https://chat.whatsapp.com/FQb1uMa6sc7GED4zExzpOG" target="_blank" class="inline-block px-8 py-3 bg-sera-gold text-black text-xl font-bold rounded-xl shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:scale-105">
+                Share Your Favourite Spots
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 mt-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500">
+            <p>© 2025 Sera • Gourmeta Ltd. | Bringing People and Food Together.</p>
+            <p class="mt-2 space-x-4">
+                <a href="https://eatwithsera.com/faqs" target="_blank" class="hover:text-sera-gold transition duration-200">FAQs</a>
+                <a href="https://eatwithsera.com/contact" target="_blank" class="hover:text-sera-gold transition duration-200">Contact Us</a>
+                <a href="https://eatwithsera.com/legal" target="_blank" class="hover:text-sera-gold transition duration-200">Legal</a>
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
